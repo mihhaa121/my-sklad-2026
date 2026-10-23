@@ -107,3 +107,19 @@ body.catalog-modal-open {overflow:hidden!important;}
 .v112-stock-physical{width:82px!important;padding:7px!important;text-align:center}
 .catalog-fields [data-field="unitCost"], [data-field="purchaseDate"], [data-field="costConfidence"]{display:none!important}
 .v112-hidden-field{display:none!important}
+
+/* Version 12.3 · Inventory Workflow */
+.v123-nav{justify-content:center;align-items:stretch;flex-wrap:wrap;overflow:visible}
+.v123-nav button{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px}
+.v123-section-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.v123-section-head h2{margin-bottom:4px}.v123-section-head p{margin:0}
+.v123-help{font-size:12px;color:#687b72;line-height:1.5;margin:0 0 12px}
+.v123-variant{grid-template-columns:minmax(180px,1fr) auto auto!important;align-items:center!important}
+.v123-physical-label{margin:0!important;display:flex!important;align-items:center;gap:7px;white-space:nowrap;font-size:11px!important;color:#64766e!important}
+.v123-physical{width:66px!important;min-width:66px!important;padding:7px 8px!important;text-align:center;font-weight:750;border-radius:9px!important}
+.v123-sale-hint{padding:14px 2px;color:#74817b;font-size:13px}
+#v123SaleResults{margin-top:10px;display:grid;gap:7px}
+.v123-sale-result{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;background:#f4f8f6;color:#17302e;border:1px solid #dce6e0;padding:11px 13px}
+.v123-sale-result span{min-width:0}.v123-sale-result b,.v123-sale-result small{display:block}.v123-sale-result small{color:#6a7a73;margin-top:3px}.v123-sale-result strong{white-space:nowrap;color:#176b58}
+#buy>#v11Purchases,#sell>#v11Sale,#sales>#v111History{display:none!important}
+@media(max-width:700px){.v123-nav{justify-content:flex-start;flex-wrap:nowrap;overflow:auto}.v123-variant{grid-template-columns:1fr!important}.v123-physical-label{justify-content:flex-start}.v111-actions{justify-content:flex-start}}
