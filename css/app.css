@@ -123,3 +123,11 @@ body.catalog-modal-open {overflow:hidden!important;}
 .v123-sale-result span{min-width:0}.v123-sale-result b,.v123-sale-result small{display:block}.v123-sale-result small{color:#6a7a73;margin-top:3px}.v123-sale-result strong{white-space:nowrap;color:#176b58}
 #buy>#v11Purchases,#sell>#v11Sale,#sales>#v111History{display:none!important}
 @media(max-width:700px){.v123-nav{justify-content:flex-start;flex-wrap:nowrap;overflow:auto}.v123-variant{grid-template-columns:1fr!important}.v123-physical-label{justify-content:flex-start}.v111-actions{justify-content:flex-start}}
+
+
+/* Version 12.4 · Inventory Control */
+.v124-ledger{display:flex;gap:7px 12px;flex-wrap:wrap;margin-top:5px;font-size:11px;color:#6a7a73}
+.v124-ledger span{white-space:nowrap}.v124-diff.ok{color:#557067}.v124-diff.plus{color:#8a6500}.v124-diff.minus{color:#a33b32}
+.v124-saved{display:inline-block;min-width:66px;font-size:10px;font-weight:700;color:#176b58}
+.v123-physical-label{flex-wrap:nowrap}.v123-physical{flex:0 0 66px}
+@media(max-width:700px){.v124-saved{min-width:0}.v123-physical-label{flex-wrap:wrap}}
