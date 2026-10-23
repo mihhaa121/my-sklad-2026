@@ -19,6 +19,5 @@ let cards=[...list.querySelectorAll('.listing-card')];let titles=cards.map(c=>c.
 function syncPurchasedToCatalog(){let d=catData();if(!d||!Array.isArray(d.items))return;let pm=physicalMap();for(let x of d.items){if(x.homeQty!==null&&x.homeQty!==undefined)continue;let title=nrm(x.title);let size=nrm((x.variation||'').replace(/.*(?:size|размер)[:=, ]*/i,''));for(let [k,v] of Object.entries(pm)){let [model,color,sz]=k.split('|');let code=(model.match(/\\b\\d{6}\\b/)||[])[0];if(code&&title.includes(code)&&(!sz||!size||size.includes(sz)||sz.includes(size))){x.homeQty=Math.max(0,v);x.verified=false;break}}}localStorage.setItem(CK,JSON.stringify(d))}
 function afterTab(t){if(t==='buy')ensureTopPurchaseButton();if(t==='sell')ensureSaleVisible();if(t==='sales')ensureHistoryVisible();if(t==='stock')setTimeout(enhanceStock,20);if(t==='catalog'){syncPurchasedToCatalog();setTimeout(cleanCatalogModal,40)}}
 document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>afterTab(b.dataset.tab),30)));
-const mo=new MutationObserver(()=>{if(!q('catalog')?.classList.contains('hidden'))cleanCatalogModal();if(!q('stock')?.classList.contains('hidden'))enhanceStock()});mo.observe(document.body,{childList:true,subtree:true});
 ensureTopPurchaseButton();ensureSaleVisible();ensureHistoryVisible();enhanceStock();
 })();
