@@ -32,4 +32,6 @@ function renderSalesHistory(){let el=$('v11SalesHistory');if(!el)return;el.inner
 // Hook into existing tab navigation after legacy tab function has switched sections.
 document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{if(b.dataset.tab==='buy')ensurePurchaseUI();if(b.dataset.tab==='stock'){ensureStockUI();renderV11Stock()}if(b.dataset.tab==='sell')ensureSaleUI()},0)));
 ensurePurchaseUI();ensureStockUI();ensureSaleUI();
+// Version 12.1: explicit shared API for modules split out of the former single HTML file.
+Object.assign(window,{$,esc,money,uid,state,save,norm,lineKey,stock,ensurePurchaseUI,renderOrders,openOrderModal,ensureStockUI,catalogData,ebayMatch,renderV11Stock,openEbay,ensureSaleUI,renderSaleSearch,fifoCost,openSale,renderSalesHistory});
 })();
